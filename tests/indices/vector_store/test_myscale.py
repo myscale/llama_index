@@ -51,7 +51,7 @@ def query() -> VectorStoreQuery:
 def test_overall_workflow(documents: List[Document]) -> None:
     client = clickhouse_connect.get_client(
         host=MYSCALE_CLUSTER_URL,
-        port=8443,
+        port=443,
         username=MYSCALE_USERNAME,
         password=MYSCALE_CLUSTER_PASSWORD,
     )
@@ -79,7 +79,7 @@ def test_overall_workflow(documents: List[Document]) -> None:
 def test_init_without_documents(documents: List[Document]) -> None:
     client = clickhouse_connect.get_client(
         host=MYSCALE_CLUSTER_URL,
-        port=8443,
+        port=443,
         username=MYSCALE_USERNAME,
         password=MYSCALE_CLUSTER_PASSWORD,
     )
@@ -107,7 +107,7 @@ def test_myscale_combine_search(
 ) -> None:
     client = clickhouse_connect.get_client(
         host=MYSCALE_CLUSTER_URL,
-        port=8443,
+        port=443,
         username=MYSCALE_USERNAME,
         password=MYSCALE_CLUSTER_PASSWORD,
     )

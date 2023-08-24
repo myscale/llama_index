@@ -42,9 +42,9 @@ class MyScaleVectorStore(VectorStore):
         database (str, optional): The name of the MyScale database
             where data will be stored. Defaults to "default".
         index_type (str, optional): The type of the MyScale vector index.
-            Defaults to "IVFFLAT".
+            Defaults to "MSTG".
         metric (str, optional): The metric type of the MyScale vector index.
-            Defaults to "cosine".
+            Defaults to "Cosine".
         batch_size (int, optional): the size of documents to insert. Defaults to 32.
         index_params (dict, optional): The index parameters for MyScale.
             Defaults to None.
@@ -64,7 +64,7 @@ class MyScaleVectorStore(VectorStore):
         table: str = "llama_index",
         database: str = "default",
         index_type: str = "MSTG",
-        metric: str = "cosine",
+        metric: str = "Cosine",
         batch_size: int = 32,
         index_params: Optional[dict] = None,
         search_params: Optional[dict] = None,

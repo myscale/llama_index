@@ -60,7 +60,7 @@ class MyScaleSettings:
     ) -> str:
         query_embed_str = format_list_to_string(query_embed)
         where_str = f"PREWHERE {where_str}" if where_str else ""
-        order = "DESC" if self.metric.lower() == "ip" else "ASC"
+        order = "DESC" if self.metric == "IP" else "ASC"
 
         search_params_str = (
             (
@@ -89,12 +89,12 @@ class MyScaleReader(BaseReader):
         myscale_host (str) : An URL to connect to MyScale backend.
         username (str) : Usernamed to login.
         password (str) : Password to login.
-        myscale_port (int) : URL port to connect with HTTP. Defaults to 8443.
+        myscale_port (int) : URL port to connect with HTTP. Defaults to 443.
         database (str) : Database name to find the table. Defaults to 'default'.
         table (str) : Table name to operate on. Defaults to 'vector_table'.
-        index_type (str): index type string. Default to "IVFLAT"
-        metric (str) : Metric to compute distance, supported are ('l2', 'cosine', 'ip').
-            Defaults to 'cosine'
+        index_type (str): index type string. Default to "MSTG"
+        metric (str) : Metric to compute distance, supported are ('L2', 'Cosine', 'IP').
+            Defaults to 'Cosine'
         batch_size (int, optional): the size of documents to insert. Defaults to 32.
         index_params (dict, optional): The index parameters for MyScale.
             Defaults to None.
@@ -108,11 +108,11 @@ class MyScaleReader(BaseReader):
         myscale_host: str,
         username: str,
         password: str,
-        myscale_port: Optional[int] = 8443,
+        myscale_port: Optional[int] = 443,
         database: str = "default",
         table: str = "llama_index",
-        index_type: str = "IVFLAT",
-        metric: str = "cosine",
+        index_type: str = "MSTG",
+        metric: str = "Cosine",
         batch_size: int = 32,
         index_params: Optional[dict] = None,
         search_params: Optional[dict] = None,

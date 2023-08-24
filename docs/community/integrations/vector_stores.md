@@ -330,7 +330,7 @@ from llama_index.vector_stores import MyScaleVectorStore
 # Creating a MyScale client
 client = clickhouse_connect.get_client(
     host='YOUR_CLUSTER_HOST',
-    port=8443,
+    port=443,
     username='YOUR_USERNAME',
     password='YOUR_CLUSTER_PASSWORD'
 )
